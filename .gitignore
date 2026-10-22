@@ -1,0 +1,23 @@
+
+# Python virtual environment
+.venv/
+
+# Python temporary files
+__pycache__/
+*.pyc
+
+# Local environment and credentials
+.env
+
+# Editor and operating system files
+.vscode/
+.DS_Store
+
+# PostgreSQL local files
+pgdata/
+
+# Exclude the original Kaggle dataset
+data/iot_telemetry_data.csv
+
+# Include the sample dataset
+!data/sample_sensor_data.csv
