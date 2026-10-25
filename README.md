@@ -6,14 +6,16 @@ This project uses Python and PostgreSQL to process and store environmental senso
 
 ## Dataset
 
-**Source:** [Environmental Sensor Telemetry Data – Kaggle](https://www.kaggle.com/datasets/garystafford/environmental-sensor-data-132k)
+**Source:** [Environmental Sensor Telemetry Data - Kaggle](https://www.kaggle.com/datasets/garystafford/environmental-sensor-data-132k)
 
-The dataset contains 405,184 measurements from three devices, including temperature, humidity, and air quality indicators. After excluding 13 duplicates, 405,171 measurements were stored in PostgreSQL.
+**License:** CC0: Public Domain
+
+The dataset contains 405,184 measurements from three devices, including temperature, humidity, and air quality indicators. After excluding 13 duplicate device/timestamp combinations, 405,171 measurements were stored in PostgreSQL.
 
 ## Tools Used
 
 - **Python:** Processes and imports the data in batches.
-- **PostgreSQL:** Stores the measurements.
+- **PostgreSQL:** Stores the measurements and prevents duplicate device/timestamp combinations.
 - **Docker Compose:** Runs the database and Python importer in containers.
 
 ## How to Run
@@ -39,7 +41,7 @@ To check the number of measurements stored:
 docker compose exec database psql -U envuser -d environmental_db -c "SELECT COUNT(*) FROM measurements;"
 ```
 
-The project automatically imports 100 simulated sensor measurements into PostgreSQL.
+The project automatically processes the complete Kaggle dataset. From 405,184 CSV records, 405,171 unique measurements are stored in PostgreSQL, while 13 duplicates are excluded.
 
 ## Future Development
 

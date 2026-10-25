@@ -23,7 +23,7 @@ services:
       DB_NAME: environmental_db
       DB_USER: envuser
       DB_PASSWORD: ${DB_PASSWORD}
-      CSV_FILE: sample_sensor_data.csv
+      CSV_FILE: iot_telemetry_data.csv
     depends_on:
       database:
         condition: service_healthy
