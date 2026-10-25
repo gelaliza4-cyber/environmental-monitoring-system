@@ -18,6 +18,3 @@ pgdata/
 
 # Exclude the original Kaggle dataset
 data/iot_telemetry_data.csv
-
-# Include the sample dataset
-!data/sample_sensor_data.csv
